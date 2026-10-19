@@ -11,4 +11,4 @@
 - 19: 3DES-CBC example using OpenSSL EVP; requires OpenSSL development files.
 - 20: ECB/CBC error propagation answers.
 
-Notes: Some assignment questions are conceptual; programs 17, 18, and 20 print the key concepts rather than implementing the full DES algorithm or simulating bit errors. The substitution attack in 16 is a frequency-based first guess, not a guaranteed solver. For real applications, prefer authenticated modern encryption such as AES-GCM over DES/3DES.
+ 
