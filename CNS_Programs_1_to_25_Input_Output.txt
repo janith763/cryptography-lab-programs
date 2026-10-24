@@ -1,0 +1,186 @@
+CRYPTOGRAPHY AND NETWORK SECURITY – PROGRAMS 1–25
+INPUT AND OUTPUT
+
+1. Caesar Cipher
+Input:
+Plaintext: HELLO
+Key: 3
+Output:
+Ciphertext: KHOOR
+
+2. Monoalphabetic Substitution Cipher
+Input:
+Plaintext: HELLO
+Cipher alphabet: QWERTYUIOPASDFGHJKLZXCVBNM
+Output:
+Ciphertext: ITSSG
+
+3. Playfair Cipher
+Input:
+Plaintext: HELLO WORLD
+Keyword: MONARCHY
+Output:
+Ciphertext: (encrypted text generated using the Playfair matrix)
+
+4. Polyalphabetic Substitution Cipher
+Input:
+Plaintext: ATTACKATDAWN
+Key: LEMON
+Output:
+Ciphertext: LXFOPVEFRNHR
+
+5. Affine Caesar Cipher
+Input:
+Plaintext: HELLO
+Keys: a = 5, b = 8
+Output:
+Ciphertext: RCLLA
+
+6. Break an Affine Cipher
+Input:
+Ciphertext: (ciphertext encrypted using an affine cipher)
+Output:
+Recovered plaintext: (most likely decrypted message)
+
+7. Decrypt a Simple Substitution Cipher
+Input:
+Ciphertext: 53‡‡†305))6*;4826)4‡.)4‡);806*;48†8¶60))85;;]8*;:‡*8†83...
+Output:
+Decrypted plaintext: (recovered message)
+
+8. Keyword-Based Monoalphabetic Cipher
+Input:
+Plaintext: HELLO
+Keyword: CIPHER
+Output:
+Ciphertext: (text encrypted using the keyword-generated substitution alphabet)
+
+9. Decrypt the PT-109 Playfair Message
+Input:
+Ciphertext: KXJEY UREBE ZWEHE WRYTU HEYFS KREHE GOYFI WTTTU OLKSY CAJPO BOTEI ZONTX BYBNT GONEY CUZWR GDSON SXBOU YWRHE BAAHY USEDQ
+Output:
+Decrypted plaintext: (message recovered using the appropriate Playfair key)
+
+10. Playfair Encryption Using the Given Matrix
+Input:
+Plaintext: MUST SEE YOU OVER CADOGAN WEST. COMING AT ONCE.
+Matrix:
+M F H I/J K
+U N O P Q
+Z V W X Y
+E L A R G
+D S T B C
+Output:
+Ciphertext: (encrypted digraphs using the given matrix)
+
+11. Playfair Key Space
+Input:
+Question: Calculate the possible and effectively unique Playfair keys.
+Output:
+Possible keys: approximately 2^? (based on 25! arrangements)
+Effectively unique keys: account for equivalent keys that produce the same encryption.
+
+12. Hill Cipher (2×2)
+Input:
+Plaintext: MEET ME AT THE USUAL PLACE AT TEN RATHER THAN EIGHT OCLOCK
+Key matrix:
+9 4
+5 7
+Output:
+Ciphertext: (encrypted text)
+Decryption output: Original plaintext recovered.
+
+13. Hill Cipher Known-Plaintext Attack
+Input:
+One or more plaintext–ciphertext block pairs; optionally chosen plaintext blocks.
+Output:
+Recovered Hill cipher key matrix.
+
+14. One-Time-Pad Version of Vigenère Cipher
+Input:
+Plaintext: SEND MORE MONEY
+Key stream: 9 0 1 7 23 15 21 14 11 11 2 8 9
+Output:
+Ciphertext: (encrypted text)
+Part (b) input: Ciphertext from part (a)
+Part (b) output: Key stream that decrypts it to CASH NOT NEEDED.
+
+15. Letter-Frequency Attack on an Additive Cipher
+Input:
+Ciphertext: (text encrypted with an additive cipher)
+Number of candidates: 10
+Output:
+Top 10 candidate plaintexts ranked by likelihood.
+
+16. Letter-Frequency Attack on a Monoalphabetic Cipher
+Input:
+Ciphertext: (text encrypted with a monoalphabetic substitution cipher)
+Number of candidates: 10
+Output:
+Top 10 candidate plaintexts ranked by likelihood.
+
+17. DES Decryption Key Schedule
+Input:
+Ciphertext block and DES key.
+Output:
+Decrypted plaintext block using subkeys K16 through K1 in reverse order.
+
+18. DES Subkey Generation
+Input:
+64-bit DES key.
+Output:
+Sixteen 48-bit subkeys K1–K16, each formed from the appropriate 28-bit key halves.
+
+19. CBC Encryption Using a Stronger Cipher
+Input:
+Plaintext blocks, encryption key, initialization vector (IV).
+Output:
+Ciphertext blocks produced using CBC mode with 3DES or another selected cipher.
+
+20. Error Propagation in ECB and CBC
+Input:
+Plaintext blocks and ciphertext containing a bit error in a selected block.
+Output:
+ECB: only the corresponding plaintext block is corrupted.
+CBC: the affected plaintext block and the following block are corrupted; later blocks are unaffected by a single ciphertext-block error.
+
+21. Padding for ECB, CBC, and CFB
+Input:
+Plaintext and block/segment size.
+Output:
+Padded plaintext with a 1 bit followed by enough 0 bits to complete a block; an extra padding block is added when the original message is already block-aligned.
+
+22. CBC Encryption and Decryption
+Input:
+Mode: CBC
+Cipher: S-DES
+IV: 10101010
+Key: 0111111101
+Plaintext: 00000001 00100011
+Output:
+Ciphertext: 11110100 00001011
+Decryption output: 00000001 00100011
+
+23. Counter Mode Encryption and Decryption
+Input:
+Mode: CTR
+Cipher: S-DES
+Initial counter: 00000000
+Key: 0111111101
+Plaintext: 00000001 00000010 00000100
+Output:
+Ciphertext: 00111000 01001111 00110010
+Decryption output: 00000001 00000010 00000100
+
+24. RSA Private-Key Calculation
+Input:
+Public exponent e = 31
+Modulus n = 3599
+Output:
+Prime factors p and q; φ(n); private exponent d such that (31 × d) mod φ(n) = 1.
+
+25. RSA and a Plaintext Block Sharing a Factor with n
+Input:
+RSA modulus n = p × q, public exponent e, and a plaintext block m with gcd(m, n) > 1.
+Output:
+The common factor gcd(m, n) reveals a nontrivial factor of n, which can compromise the RSA private key.
