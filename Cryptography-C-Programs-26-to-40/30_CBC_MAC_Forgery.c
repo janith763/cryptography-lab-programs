@@ -1,0 +1,2 @@
+#include <stdio.h>
+int main(){puts("CBC-MAC extension/forgery demonstration");puts("For a one-block message X, T=E_K(X).");puts("The standard CBC-MAC construction is secure for fixed-length messages, but is vulnerable when variable-length messages are accepted without length/domain separation.");puts("Use CMAC or include an unambiguous length/domain prefix. A forged two-block tag must be computed using the CBC chaining equation, not assumed equal to T.");return 0;}

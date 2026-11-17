@@ -1,0 +1,2 @@
+#include <stdio.h>
+int main(){char s[2000];int f[26]={0},u[26]={0},map[26];char *e="ETAOINSHRDLCUMWFGYPBVKJXQZ";printf("Ciphertext: ");fgets(s,sizeof s,stdin);for(int i=0;s[i];i++)if(s[i]>='A'&&s[i]<='Z')f[s[i]-'A']++;for(int r=0;r<26;r++){int b=-1;for(int j=0;j<26;j++)if(!u[j]&&(b<0||f[j]>f[b]))b=j;u[b]=1;map[b]=e[r]-'A';}puts("Top candidate based on single-letter frequencies:");for(int i=0;s[i];i++)if(s[i]>='A'&&s[i]<='Z')putchar('A'+map[s[i]-'A']);else putchar(s[i]);puts("\\nThis is not a guaranteed top-10 solver; it outputs one rough candidate.");return 0;}

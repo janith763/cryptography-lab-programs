@@ -1,0 +1,2 @@
+#include <stdio.h>
+int main(){char s[256];int k[256],n=0;printf("Uppercase plaintext: ");if(!fgets(s,sizeof s,stdin))return 1;for(int i=0;s[i]&&s[i]!='\\n';i++)if(s[i]>='A'&&s[i]<='Z')n++;printf("Enter %d key values (0-25): ",n);for(int i=0;i<n;i++)if(scanf("%d",&k[i])!=1||k[i]<0||k[i]>25){puts("Invalid key");return 1;}printf("Ciphertext: ");for(int i=0,j=0;s[i]&&s[i]!='\\n';i++)if(s[i]>='A'&&s[i]<='Z')putchar('A'+(s[i]-'A'+k[j++])%26);else putchar(s[i]);puts("");return 0;}

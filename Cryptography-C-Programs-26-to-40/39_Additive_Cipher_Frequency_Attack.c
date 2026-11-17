@@ -1,0 +1,2 @@
+#include <stdio.h>
+int main(){char s[2000];int f[26]={0},best=0;printf("Ciphertext: ");fgets(s,sizeof s,stdin);for(int i=0;s[i];i++)if(s[i]>='A'&&s[i]<='Z')f[s[i]-'A']++;for(int k=0;k<26;k++)if(f[('E'-'A'+k)%26]>f[('E'-'A'+best)%26])best=k;printf("Likely encryption shift: %d\\nCandidate plaintext: ",best);for(int i=0;s[i];i++)if(s[i]>='A'&&s[i]<='Z')putchar('A'+(s[i]-'A'-best+26)%26);else putchar(s[i]);puts("");return 0;}
