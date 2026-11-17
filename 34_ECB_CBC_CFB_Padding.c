@@ -1,0 +1,2 @@
+#include <stdio.h>
+int main(){puts("Padding demonstration: append 0x80 (a 1 bit) then zero bits/bytes until a full block is formed.");puts("ECB encrypts blocks independently; CBC XORs each block with the previous ciphertext (or IV); CFB feeds ciphertext back.");puts("Even an already aligned message receives a full padding block so the receiver can distinguish an aligned ending from data that merely ends in zero bits.");return 0;}

@@ -1,0 +1,2 @@
+#include <stdio.h>
+int main(){char s[2000];int f[26]={0},used[26]={0},map[26];char *eng="ETAOINSHRDLCUMWFGYPBVKJXQZ";printf("Ciphertext: ");fgets(s,sizeof s,stdin);for(int i=0;s[i];i++)if(s[i]>='A'&&s[i]<='Z')f[s[i]-'A']++;for(int r=0;r<26;r++){int b=-1;for(int j=0;j<26;j++)if(!used[j]&&(b<0||f[j]>f[b]))b=j;used[b]=1;map[b]=eng[r]-'A';}printf("Frequency candidate: ");for(int i=0;s[i];i++)if(s[i]>='A'&&s[i]<='Z')putchar('A'+map[s[i]-'A']);else putchar(s[i]);puts("\\nHeuristic only; full substitution cracking needs language scoring/search.");return 0;}

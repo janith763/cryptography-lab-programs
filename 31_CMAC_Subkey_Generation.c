@@ -1,0 +1,2 @@
+#include <stdio.h>
+int main(){puts("CMAC reduction constants:");puts("64-bit block: Rb = 0x1B");puts("128-bit block: Rb = 0x87");puts("Shift the block left by one bit. If the original most-significant bit was 1, XOR Rb into the low end.");puts("This is multiplication by x modulo the block-size-specific reduction polynomial.");puts("Apply the same operation to the first subkey to obtain the second.");return 0;}
